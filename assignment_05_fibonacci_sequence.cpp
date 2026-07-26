@@ -55,39 +55,26 @@ void printFibonacci(int n);
 bool isFibonacci(int num);
 
 int main() {
-    int choice;
+    int n;
+    cout << "How many terms? ";
+    cin >> n;
 
-    cout << "1. Print First N Terms (Part A)\n";
-    cout << "2. Check if Number Belongs to Sequence (Part B)\n";
-    cout << "Enter choice: ";
-    cin >> choice;
-
-    if (choice == 1) {
-        int n;
-        cout << "How many terms? ";
-        cin >> n;
-
-        if (n <= 0) {
-            cout << "Error: N must be a positive integer.\n";
-        } else {
-            printFibonacci(n);
-        }
-
-    } else if (choice == 2) {
-        int num;
-        cout << "Enter a number to check: ";
-        cin >> num;
-
-        if (num < 0) {
-            cout << num << " is NOT a Fibonacci number.\n";
-        } else if (isFibonacci(num)) {
-            cout << num << " is a Fibonacci number.\n";
-        } else {
-            cout << num << " is NOT a Fibonacci number.\n";
-        }
-
+    if (n <= 0) {
+        cout << "Error: N must be a positive integer.\n";
     } else {
-        cout << "Invalid choice!\n";
+        printFibonacci(n);
+    }
+
+    int num;
+    cout << "Enter a number to check: ";
+    cin >> num;
+
+    if (num < 0) {
+        cout << num << " is NOT a Fibonacci number.\n";
+    } else if (isFibonacci(num)) {
+        cout << num << " is a Fibonacci number.\n";
+    } else {
+        cout << num << " is NOT a Fibonacci number.\n";
     }
 
     return 0;
